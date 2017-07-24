@@ -9,12 +9,15 @@ pipeline {
 			}
 		}
 		stage('Test Parallel') {
-			parallel p1: {
+			steps {
+				parallel p1: {
 				echo 'Message from P1.'
-			}, 
-			p2: {
-				echo 'Message from P2.'
+				}, 
+				p2: {
+					echo 'Message from P2.'
+				}
 			}
+			
 		}
 	}
 
