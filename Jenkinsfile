@@ -9,4 +9,15 @@ pipeline {
 			}
 		}
 	}
+	post {
+		always {
+			echo 'This will always run'
+		}
+		success {
+			echo 'Oh yeah, success'
+		}
+		failure {
+			echo 'Ooops, something goes wrong'
+		}
+	}
 }
