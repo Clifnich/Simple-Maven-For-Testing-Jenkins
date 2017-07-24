@@ -8,16 +8,14 @@ pipeline {
 				echo 'My name is Scary Tom'
 			}
 		}
-	}
-	post {
-		always {
-			echo 'This will always run'
-		}
-		success {
-			echo 'Oh yeah, success'
-		}
-		failure {
-			echo 'Ooops, something goes wrong'
+		stage('Test Parallel') {
+			parallel p1: {
+				echo 'Message from P1.'
+			}, 
+			p2: {
+				echo 'Message from P2.'
+			}
 		}
 	}
+
 }
